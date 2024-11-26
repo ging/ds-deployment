@@ -99,3 +99,4 @@ services:
     environment:
       CONTEXT_BROKER_URL: fiware-orion
       CONTEXT_BROKER_HOST: 1026
+    entrypoint: ["sh", "-c", "sleep 4 && ./fiware-streaming-service.sh"]
