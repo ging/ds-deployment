@@ -1,1 +1,0 @@
-{"subscriptionId": "6745d76b348511d1f0044abe", "data": [{"id": "AirQualityUnit01", "type": "AirQualityUnit", "CO": {"type": "Number", "value": "15", "metadata": {}}, "relativeHumidity": {"type": "Number", "value": "0", "metadata": {}}, "temperature": {"type": "Number", "value": "0", "metadata": {}}}]}
