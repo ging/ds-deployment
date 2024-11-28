@@ -14,7 +14,7 @@ services:
 
   ds-provider:
     container_name: ds-provider
-    image: caparicioesd/rainbow
+    image: caparicioesd/rainbow:latest
     restart: on-failure
     depends_on:
       - db-provider
@@ -26,7 +26,7 @@ services:
 
   ds-provider-setup:
     container_name: ds-provider-setup
-    image: caparicioesd/rainbow
+    image: caparicioesd/rainbow:latest
     restart: on-failure
     depends_on:
       - db-provider
@@ -47,7 +47,7 @@ services:
 
   ds-consumer:
     container_name: ds-consumer
-    image: caparicioesd/rainbow
+    image: caparicioesd/rainbow:latest
     restart: on-failure
     depends_on:
       - db-consumer
@@ -59,7 +59,7 @@ services:
 
   ds-consumer-setup:
     container_name: ds-consumer-setup
-    image: caparicioesd/rainbow
+    image: caparicioesd/rainbow:latest
     restart: on-failure
     depends_on:
       - db-consumer
@@ -100,3 +100,8 @@ services:
       CONTEXT_BROKER_URL: fiware-orion
       CONTEXT_BROKER_HOST: 1026
     entrypoint: ["sh", "-c", "sleep 4 && ./fiware-streaming-service.sh"]
+
+  api-test:
+    image: svenwal/jsonplaceholder
+    ports:
+      - "3000:3000"
