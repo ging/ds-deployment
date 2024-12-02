@@ -183,7 +183,7 @@ def create_combined_dataset(catalog_id):
     """
     # Crear servicios de datos individuales
     viviendas_id = create_data_service_viviendas(catalog_id)
-    servicios_id = create_data_servivios(catalog_id)
+    servicios_id = create_data_servivios(catalog_id) 
     terrenos_id = create_data_terrenos(catalog_id)
     
     # Obtener datos individuales (simulación de datos para este ejemplo)
