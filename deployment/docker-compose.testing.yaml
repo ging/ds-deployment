@@ -112,11 +112,20 @@ services:
     ports:
       - "3000:3000"
 
-  rest-api:
+  rest-api-service:
     build:
       context: ./rest-api-service
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    volumes:
+      - ./data:/data
+
+  rest-api-backend:
+    build:
+      context: ./rest-api-backend
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
     volumes:
       - ./data:/app/data

@@ -2,11 +2,12 @@ import requests
 import json
 import pprint
 import pandas as pd
+import os
 
 # Configuración de constantes
-DATA_SPACE_PROVIDER = "http://127.0.0.1:1234"
-DATA_SPACE_CONSUMER = "http://127.0.0.1:1235"
-REST_API_SERVICE = "http://rest-api:8000" # API de G1
+DATA_SPACE_PROVIDER = "http://ds-provider:1234"
+DATA_SPACE_CONSUMER = "http://ds-consumer:1235"
+REST_API_SERVICE = "http://rest-api-service:8000" # API de G1
 
 
 def create_catalog():
@@ -23,13 +24,12 @@ def create_catalog():
     return response.json()["@id"]
 
 # VIVIENDAS
-import os
-import json
+
 
 def create_data_service_viviendas(catalog_id):
     """Crea un servicio de datos en el catálogo especificado y guarda la respuesta JSON en un archivo."""
     # Definir el payload y la URL de la API
-    payload = f"dcat:endpointURL: {REST_API_SERVICE}/get_viviendas"  # get_viviendas es el endpoint de la API de G1
+    payload = f"dcat:endpointURL: {REST_API_SERVICE}/viviendas"  # viviendas es el endpoint de la API de G1
     headers = {"Content-Type": "application/json"}
     url = f"{DATA_SPACE_PROVIDER}/api/v1/catalogs/{catalog_id}/data-services"
     
@@ -45,22 +45,11 @@ def create_data_service_viviendas(catalog_id):
     # Imprimir la respuesta para depuración
     pprint.pprint(response_json)
     
-    # Crear el directorio 'raw_data' si no existe
-    if not os.path.exists('raw_data'):
-        os.makedirs('raw_data')
-    # Guardar el JSON en un archivo dentro de la carpeta 'raw_data'
-    file_path = os.path.join('raw_data', 'viviendas_data.json')
-    with open(file_path, 'w') as f:
-        json.dump(response_json, f, indent=4)
-    
-    # Retornar el json
-    return response_json
-
 # SERVICIOS
-def create_data_servivios(catalog_id):
+def create_data_servicios(catalog_id):
     """Crea un servicio de datos en el catálogo especificado y guarda la respuesta JSON en un archivo."""
     # Definir el payload y la URL de la API
-    payload = f"dcat:endpointURL: {REST_API_SERVICE}/get_servicios"  # get_servicios es el endpoint de la API de G1
+    payload = f"dcat:endpointURL: {REST_API_SERVICE}/servicios"  # get_servicios es el endpoint de la API de G1
     headers = {"Content-Type": "application/json"}
     url = f"{DATA_SPACE_PROVIDER}/api/v1/catalogs/{catalog_id}/data-services"
     
@@ -75,23 +64,12 @@ def create_data_servivios(catalog_id):
     
     # Imprimir la respuesta para depuración
     pprint.pprint(response_json)
-    
-    # Crear el directorio 'raw_data' si no existe
-    if not os.path.exists('raw_data'):
-        os.makedirs('raw_data')
-    # Guardar el JSON en un archivo dentro de la carpeta 'raw_data'
-    file_path = os.path.join('raw_data', 'servicios_data.json')
-    with open(file_path, 'w') as f:
-        json.dump(response_json, f, indent=4)
-    
-    # Retornar el json
-    return response_json
 
 # TERRENOS
 def create_data_terrenos(catalog_id):
     """Crea un servicio de datos en el catálogo especificado y guarda la respuesta JSON en un archivo."""
     # Definir el payload y la URL de la API
-    payload = f"dcat:endpointURL: {REST_API_SERVICE}/get_terrenos"  # get_terrenos es el endpoint de la API de G1
+    payload = f"dcat:endpointURL: {REST_API_SERVICE}/terrenos"  # get_terrenos es el endpoint de la API de G1
     headers = {"Content-Type": "application/json"}
     url = f"{DATA_SPACE_PROVIDER}/api/v1/catalogs/{catalog_id}/data-services"
     
@@ -107,19 +85,6 @@ def create_data_terrenos(catalog_id):
     # Imprimir la respuesta para depuración
     pprint.pprint(response_json)
     
-    # Crear el directorio 'raw_data' si no existe
-    if not os.path.exists('raw_data'):
-        os.makedirs('raw_data')
-    # Guardar el JSON en un archivo dentro de la carpeta 'raw_data'
-    file_path = os.path.join('raw_data', 'terrenos_data.json')
-    with open(file_path, 'w') as f:
-        json.dump(response_json, f, indent=4)
-    
-    # Retornar el json
-    return response_json
-
-
-
 def create_agreement(dataservice_id):
     """Crea un acuerdo utilizando un servicio de datos."""
     payload = {"dataServiceId": dataservice_id}
