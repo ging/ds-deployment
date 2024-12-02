@@ -1,0 +1,702 @@
+[
+    {
+        "id": "d8405ae0-9728-43e8-9672-41b06a6408f9",
+        "name": "Bob",
+        "age": 36,
+        "join_date": "2022-04-07",
+        "score": 78.25
+    },
+    {
+        "id": "d7fc460c-2dd4-452c-8242-ab672928d824",
+        "name": "Diana",
+        "age": 45,
+        "join_date": "2016-02-15",
+        "score": 56.89
+    },
+    {
+        "id": "adf4b0b9-adbf-4bd7-b0eb-cc2d92f69dcf",
+        "name": "Diana",
+        "age": 21,
+        "join_date": "2017-06-02",
+        "score": 13.86
+    },
+    {
+        "id": "db17ff56-36a7-49ef-bd98-6fc5496cb459",
+        "name": "Charlie",
+        "age": 30,
+        "join_date": "2020-01-02",
+        "score": 50.2
+    },
+    {
+        "id": "c0feaf91-d8a1-4388-bae4-77356f17eb6a",
+        "name": "Alice",
+        "age": 59,
+        "join_date": "2022-04-25",
+        "score": 87.7
+    },
+    {
+        "id": "e438e698-cefe-408c-b7ee-db851f445449",
+        "name": "Diana",
+        "age": 34,
+        "join_date": "2017-03-24",
+        "score": 3.31
+    },
+    {
+        "id": "1102c2aa-688a-4cc8-894f-a2325d24ceca",
+        "name": "Charlie",
+        "age": 22,
+        "join_date": "2019-08-06",
+        "score": 54.65
+    },
+    {
+        "id": "b5712924-1f78-4baf-99f0-55c397963aab",
+        "name": "Diana",
+        "age": 28,
+        "join_date": "2015-08-10",
+        "score": 75.03
+    },
+    {
+        "id": "8891a9db-f40b-4d01-aed5-50321750f286",
+        "name": "Alice",
+        "age": 47,
+        "join_date": "2015-10-22",
+        "score": 62.93
+    },
+    {
+        "id": "a00c75e2-6341-439c-bdc7-40f672197e19",
+        "name": "Eve",
+        "age": 54,
+        "join_date": "2024-08-15",
+        "score": 79.91
+    },
+    {
+        "id": "07a6a1e8-974d-4a5a-976b-e6a1ee72f10f",
+        "name": "Charlie",
+        "age": 54,
+        "join_date": "2022-08-01",
+        "score": 24.68
+    },
+    {
+        "id": "b9353507-0092-417f-958c-8e742faed0e7",
+        "name": "Alice",
+        "age": 25,
+        "join_date": "2020-05-25",
+        "score": 43.7
+    },
+    {
+        "id": "a7aac9f4-8ab2-46ee-9ca0-9356570eb66d",
+        "name": "Charlie",
+        "age": 41,
+        "join_date": "2022-09-06",
+        "score": 70.03
+    },
+    {
+        "id": "82c2f3ab-53e9-4917-b864-09952eaf2201",
+        "name": "Bob",
+        "age": 19,
+        "join_date": "2016-01-15",
+        "score": 37.66
+    },
+    {
+        "id": "cb2b73e6-b496-4fc9-b6ee-1127dc279292",
+        "name": "Eve",
+        "age": 53,
+        "join_date": "2024-07-02",
+        "score": 95.82
+    },
+    {
+        "id": "c1e17206-c5cb-4011-923c-5496835ad220",
+        "name": "Diana",
+        "age": 55,
+        "join_date": "2021-11-03",
+        "score": 91.22
+    },
+    {
+        "id": "62f44c94-0c1d-47b3-a3f6-83ef1895f111",
+        "name": "Eve",
+        "age": 32,
+        "join_date": "2018-11-21",
+        "score": 18.16
+    },
+    {
+        "id": "fd08da17-4000-4ac1-87d3-30a345203239",
+        "name": "Eve",
+        "age": 32,
+        "join_date": "2015-06-22",
+        "score": 57.74
+    },
+    {
+        "id": "f0b0438a-89a0-404a-918e-cf700b234664",
+        "name": "Eve",
+        "age": 29,
+        "join_date": "2021-05-15",
+        "score": 54.75
+    },
+    {
+        "id": "da90bafb-e399-4797-89f6-e9da47c12c52",
+        "name": "Eve",
+        "age": 34,
+        "join_date": "2020-02-15",
+        "score": 2.42
+    },
+    {
+        "id": "c3c58624-09bf-4630-a4da-b4d346eb78a2",
+        "name": "Eve",
+        "age": 37,
+        "join_date": "2024-08-19",
+        "score": 3.73
+    },
+    {
+        "id": "cfbd5567-ecae-4782-b411-226c002bf6ea",
+        "name": "Alice",
+        "age": 41,
+        "join_date": "2016-03-27",
+        "score": 18.45
+    },
+    {
+        "id": "73f6ac8b-71d5-43a6-a878-561c9e3feab3",
+        "name": "Charlie",
+        "age": 40,
+        "join_date": "2022-07-23",
+        "score": 85.69
+    },
+    {
+        "id": "f1b04516-01ce-4681-9ecf-98c33e71479d",
+        "name": "Charlie",
+        "age": 41,
+        "join_date": "2015-04-29",
+        "score": 72.96
+    },
+    {
+        "id": "4b02e1a1-9b14-4371-b348-4438614b371f",
+        "name": "Charlie",
+        "age": 47,
+        "join_date": "2016-11-25",
+        "score": 0.71
+    },
+    {
+        "id": "9cbc0373-7261-4b02-bfa1-1521cba71db5",
+        "name": "Alice",
+        "age": 55,
+        "join_date": "2023-05-26",
+        "score": 53.68
+    },
+    {
+        "id": "f5570772-e810-411f-b05f-8ff4d7029314",
+        "name": "Bob",
+        "age": 25,
+        "join_date": "2024-04-19",
+        "score": 14.04
+    },
+    {
+        "id": "74240c8a-c35c-4ee1-9e25-46384f0d659b",
+        "name": "Eve",
+        "age": 20,
+        "join_date": "2018-09-23",
+        "score": 90.14
+    },
+    {
+        "id": "6581b282-afa0-474f-9386-5cc36cc0da7b",
+        "name": "Bob",
+        "age": 24,
+        "join_date": "2016-11-05",
+        "score": 45.11
+    },
+    {
+        "id": "c0e6d855-2634-4301-b15a-03d35bf00edf",
+        "name": "Charlie",
+        "age": 42,
+        "join_date": "2015-09-16",
+        "score": 79.18
+    },
+    {
+        "id": "fef16632-f00f-48e2-b6c4-befba7493116",
+        "name": "Eve",
+        "age": 52,
+        "join_date": "2017-11-17",
+        "score": 41.71
+    },
+    {
+        "id": "6093244a-e533-4544-8564-7e16c6f8840b",
+        "name": "Alice",
+        "age": 25,
+        "join_date": "2022-09-13",
+        "score": 61.17
+    },
+    {
+        "id": "1352fb85-ba26-4bfa-8d03-45017c322227",
+        "name": "Charlie",
+        "age": 41,
+        "join_date": "2019-07-18",
+        "score": 98.54
+    },
+    {
+        "id": "e97705b4-9dfc-45e6-b802-04cb37abd7c3",
+        "name": "Alice",
+        "age": 51,
+        "join_date": "2018-11-11",
+        "score": 87.54
+    },
+    {
+        "id": "bd4205de-cf9b-49c2-a32b-c039a0d1df2a",
+        "name": "Charlie",
+        "age": 35,
+        "join_date": "2016-11-22",
+        "score": 42.33
+    },
+    {
+        "id": "81b6ec55-dacb-4f57-9599-63ea97f6959e",
+        "name": "Alice",
+        "age": 33,
+        "join_date": "2024-04-08",
+        "score": 79.82
+    },
+    {
+        "id": "5cd9590c-b892-4e09-8991-90d6464b4066",
+        "name": "Alice",
+        "age": 37,
+        "join_date": "2023-12-28",
+        "score": 60.22
+    },
+    {
+        "id": "953c2cd4-3bd8-43bc-9679-70caf03b00fd",
+        "name": "Charlie",
+        "age": 55,
+        "join_date": "2017-08-08",
+        "score": 95.99
+    },
+    {
+        "id": "7eb122dd-8a26-4e29-8fde-479c9a5203ee",
+        "name": "Diana",
+        "age": 25,
+        "join_date": "2022-01-07",
+        "score": 71.24
+    },
+    {
+        "id": "bafe1d07-cf37-48dc-b558-54fb0590086f",
+        "name": "Eve",
+        "age": 58,
+        "join_date": "2015-03-28",
+        "score": 45.1
+    },
+    {
+        "id": "3113e91c-f6b1-4c5b-91fe-fa72d8db7fef",
+        "name": "Diana",
+        "age": 58,
+        "join_date": "2017-02-23",
+        "score": 26.56
+    },
+    {
+        "id": "d8a7eb79-8131-4579-9f1d-ff9f982e48fe",
+        "name": "Bob",
+        "age": 60,
+        "join_date": "2019-07-23",
+        "score": 89.03
+    },
+    {
+        "id": "b3d547f7-0f54-46cf-a13d-937575db54e3",
+        "name": "Charlie",
+        "age": 45,
+        "join_date": "2019-08-01",
+        "score": 71.28
+    },
+    {
+        "id": "52764fee-d35d-4b12-992a-09941ecb0a7a",
+        "name": "Bob",
+        "age": 28,
+        "join_date": "2018-10-18",
+        "score": 11.1
+    },
+    {
+        "id": "59c1c536-8735-426d-84c2-f6a2cdc1be3d",
+        "name": "Alice",
+        "age": 20,
+        "join_date": "2021-07-08",
+        "score": 69.1
+    },
+    {
+        "id": "a29c09c7-080c-4697-82c5-335004e2cd07",
+        "name": "Diana",
+        "age": 59,
+        "join_date": "2018-08-25",
+        "score": 45.62
+    },
+    {
+        "id": "e4b7a66e-3f72-46f6-8a04-e0a46c3f47c0",
+        "name": "Diana",
+        "age": 57,
+        "join_date": "2019-01-01",
+        "score": 37.74
+    },
+    {
+        "id": "6a4471af-1dbe-473f-9cc3-4d9f92761b27",
+        "name": "Bob",
+        "age": 39,
+        "join_date": "2018-10-02",
+        "score": 17.0
+    },
+    {
+        "id": "4918936d-243c-428b-bf8d-9f64dd26ce2d",
+        "name": "Bob",
+        "age": 40,
+        "join_date": "2016-11-22",
+        "score": 12.66
+    },
+    {
+        "id": "90e45006-f0ff-422a-a702-05667e6efd99",
+        "name": "Alice",
+        "age": 22,
+        "join_date": "2017-03-05",
+        "score": 68.94
+    },
+    {
+        "id": "d825dc37-44df-45ff-8681-0ae58a51f6a1",
+        "name": "Charlie",
+        "age": 57,
+        "join_date": "2015-12-24",
+        "score": 72.59
+    },
+    {
+        "id": "09e8a846-dde7-4df9-843b-20e903d61e94",
+        "name": "Diana",
+        "age": 44,
+        "join_date": "2021-05-16",
+        "score": 69.72
+    },
+    {
+        "id": "8e77ab27-0cc6-4ac8-bb86-f2ec24e93ce2",
+        "name": "Charlie",
+        "age": 34,
+        "join_date": "2023-01-12",
+        "score": 33.2
+    },
+    {
+        "id": "12de64de-c667-4106-86cb-bddb6adae33f",
+        "name": "Bob",
+        "age": 25,
+        "join_date": "2018-06-09",
+        "score": 21.41
+    },
+    {
+        "id": "b25d01a2-d993-4c20-b8d7-613d187bb1cf",
+        "name": "Bob",
+        "age": 51,
+        "join_date": "2021-10-31",
+        "score": 31.92
+    },
+    {
+        "id": "fd5be488-aeba-4858-83bc-e100619f3499",
+        "name": "Charlie",
+        "age": 59,
+        "join_date": "2015-11-25",
+        "score": 67.43
+    },
+    {
+        "id": "8f8617c5-7ddf-46c0-8cca-f56cc359e352",
+        "name": "Bob",
+        "age": 37,
+        "join_date": "2018-05-04",
+        "score": 99.47
+    },
+    {
+        "id": "610df6a7-640c-43cd-b917-86ba83cec57a",
+        "name": "Alice",
+        "age": 50,
+        "join_date": "2015-12-17",
+        "score": 29.79
+    },
+    {
+        "id": "c9cb16aa-8299-4fac-ae8d-fb9c4e623c4a",
+        "name": "Diana",
+        "age": 59,
+        "join_date": "2017-07-11",
+        "score": 53.44
+    },
+    {
+        "id": "1049a994-2097-4684-be15-e1d81be324c0",
+        "name": "Bob",
+        "age": 57,
+        "join_date": "2017-01-05",
+        "score": 88.8
+    },
+    {
+        "id": "a8d995da-0e20-4612-a492-75757e06a8f6",
+        "name": "Bob",
+        "age": 31,
+        "join_date": "2022-02-25",
+        "score": 25.76
+    },
+    {
+        "id": "5561c8f2-3778-47e9-a14e-e8b8a0fd3d46",
+        "name": "Charlie",
+        "age": 38,
+        "join_date": "2022-10-02",
+        "score": 32.22
+    },
+    {
+        "id": "28fbf12d-367b-41b7-a4de-492fde159216",
+        "name": "Diana",
+        "age": 52,
+        "join_date": "2019-11-05",
+        "score": 8.0
+    },
+    {
+        "id": "15d32199-cc64-4904-a200-26e1519d726a",
+        "name": "Charlie",
+        "age": 41,
+        "join_date": "2015-03-29",
+        "score": 31.8
+    },
+    {
+        "id": "b85717a0-be40-47ed-9258-58a898eef696",
+        "name": "Charlie",
+        "age": 55,
+        "join_date": "2021-11-10",
+        "score": 67.85
+    },
+    {
+        "id": "c2e3c316-b578-4105-987d-ace3e5e444dc",
+        "name": "Eve",
+        "age": 52,
+        "join_date": "2021-06-01",
+        "score": 64.59
+    },
+    {
+        "id": "3b6d5844-1561-45a4-9964-976c58901013",
+        "name": "Diana",
+        "age": 45,
+        "join_date": "2020-11-09",
+        "score": 79.79
+    },
+    {
+        "id": "bacb8d8f-0a79-4b6b-bd9b-c14ad65b8007",
+        "name": "Diana",
+        "age": 43,
+        "join_date": "2022-09-27",
+        "score": 80.77
+    },
+    {
+        "id": "822aa928-937e-4627-9cc2-e750459d6c9b",
+        "name": "Alice",
+        "age": 34,
+        "join_date": "2023-03-09",
+        "score": 91.58
+    },
+    {
+        "id": "75711acc-df25-4781-8e28-efeca7fc06f4",
+        "name": "Charlie",
+        "age": 59,
+        "join_date": "2016-04-01",
+        "score": 76.77
+    },
+    {
+        "id": "230ed1e2-b15b-4a0f-a93a-1ec2d8f88b4e",
+        "name": "Alice",
+        "age": 48,
+        "join_date": "2017-01-06",
+        "score": 77.53
+    },
+    {
+        "id": "b0259acd-a29b-4dba-9a7a-3916b2fd43e2",
+        "name": "Eve",
+        "age": 60,
+        "join_date": "2016-05-10",
+        "score": 69.11
+    },
+    {
+        "id": "652acbf2-f4d1-4708-879b-1333aa3531d7",
+        "name": "Diana",
+        "age": 48,
+        "join_date": "2022-06-12",
+        "score": 79.93
+    },
+    {
+        "id": "868b2f7f-edc8-4043-9f22-2c2bfe0c81ac",
+        "name": "Bob",
+        "age": 53,
+        "join_date": "2017-02-17",
+        "score": 50.83
+    },
+    {
+        "id": "29650a01-b4d2-467e-ad6c-3546ce389839",
+        "name": "Bob",
+        "age": 22,
+        "join_date": "2018-02-23",
+        "score": 62.75
+    },
+    {
+        "id": "241464bb-c5f1-4108-893c-06e47afe8424",
+        "name": "Eve",
+        "age": 44,
+        "join_date": "2024-02-22",
+        "score": 17.94
+    },
+    {
+        "id": "f1a3b03d-c483-4c6e-8192-be297b8f0569",
+        "name": "Bob",
+        "age": 42,
+        "join_date": "2023-05-19",
+        "score": 11.32
+    },
+    {
+        "id": "4428e1ff-b9e9-4099-a33f-849e4ebf6912",
+        "name": "Charlie",
+        "age": 42,
+        "join_date": "2024-08-02",
+        "score": 1.91
+    },
+    {
+        "id": "97212c56-203a-4a7a-86a5-964e837b282d",
+        "name": "Diana",
+        "age": 27,
+        "join_date": "2015-07-30",
+        "score": 87.21
+    },
+    {
+        "id": "8fb26514-d7e6-488e-856f-55bc47e8170c",
+        "name": "Bob",
+        "age": 41,
+        "join_date": "2018-12-09",
+        "score": 4.08
+    },
+    {
+        "id": "efb54e87-d6b4-4f2b-8a2c-e43d966b1055",
+        "name": "Charlie",
+        "age": 43,
+        "join_date": "2024-09-04",
+        "score": 23.33
+    },
+    {
+        "id": "594a6cf4-bf39-4437-8eb4-02df087369f4",
+        "name": "Bob",
+        "age": 60,
+        "join_date": "2019-01-09",
+        "score": 79.43
+    },
+    {
+        "id": "51b2c0d4-2904-4f2c-95c4-e76bf6fbe235",
+        "name": "Bob",
+        "age": 32,
+        "join_date": "2016-02-08",
+        "score": 55.77
+    },
+    {
+        "id": "9e964cb1-4107-45d3-ba31-d66b124b66b7",
+        "name": "Diana",
+        "age": 46,
+        "join_date": "2016-06-07",
+        "score": 14.97
+    },
+    {
+        "id": "24d488e6-5764-4b48-a5d1-2cccd8e1a88e",
+        "name": "Charlie",
+        "age": 25,
+        "join_date": "2015-09-30",
+        "score": 90.69
+    },
+    {
+        "id": "2aa42900-3dc3-4747-9936-60488cff595c",
+        "name": "Alice",
+        "age": 32,
+        "join_date": "2017-10-27",
+        "score": 1.82
+    },
+    {
+        "id": "bd325e46-227c-4c76-abc4-7d622dbb1822",
+        "name": "Alice",
+        "age": 21,
+        "join_date": "2020-10-14",
+        "score": 21.36
+    },
+    {
+        "id": "f3bff4f0-aab0-46ef-b39c-5c8510b2407f",
+        "name": "Eve",
+        "age": 32,
+        "join_date": "2024-01-25",
+        "score": 13.8
+    },
+    {
+        "id": "6e6c5f75-1535-4718-ac50-2a82788a6695",
+        "name": "Charlie",
+        "age": 28,
+        "join_date": "2015-09-17",
+        "score": 21.33
+    },
+    {
+        "id": "e9ecd450-273f-4d4f-800c-268762854b50",
+        "name": "Eve",
+        "age": 29,
+        "join_date": "2019-03-09",
+        "score": 57.03
+    },
+    {
+        "id": "1d58fb9a-06df-4636-ac08-2239f6fc3101",
+        "name": "Charlie",
+        "age": 35,
+        "join_date": "2024-02-01",
+        "score": 59.75
+    },
+    {
+        "id": "abb87e95-f006-45fe-97de-25d661051348",
+        "name": "Charlie",
+        "age": 45,
+        "join_date": "2022-05-11",
+        "score": 97.3
+    },
+    {
+        "id": "479899a4-625c-4fe4-82cb-f9fb46715d72",
+        "name": "Diana",
+        "age": 55,
+        "join_date": "2018-05-29",
+        "score": 10.17
+    },
+    {
+        "id": "cdff4ed5-13a4-416e-bace-0b76efda6f1e",
+        "name": "Charlie",
+        "age": 31,
+        "join_date": "2024-08-18",
+        "score": 36.64
+    },
+    {
+        "id": "e53b74f6-4ab7-43b1-b912-2642d9b348af",
+        "name": "Charlie",
+        "age": 29,
+        "join_date": "2015-09-07",
+        "score": 2.12
+    },
+    {
+        "id": "9e3eed79-3be0-4d46-a0a9-c1726c73720d",
+        "name": "Bob",
+        "age": 60,
+        "join_date": "2023-08-30",
+        "score": 16.39
+    },
+    {
+        "id": "8f98d803-d038-4dfa-80d9-31eb720a7228",
+        "name": "Diana",
+        "age": 59,
+        "join_date": "2020-04-04",
+        "score": 88.39
+    },
+    {
+        "id": "66012906-d031-4815-a32a-10b107477a37",
+        "name": "Eve",
+        "age": 56,
+        "join_date": "2023-08-04",
+        "score": 31.3
+    },
+    {
+        "id": "2e60baa0-e0da-4095-b25d-e304c4a44836",
+        "name": "Alice",
+        "age": 27,
+        "join_date": "2019-03-02",
+        "score": 65.71
+    },
+    {
+        "id": "f3ef4357-8b63-4539-8565-d0721f62443a",
+        "name": "Diana",
+        "age": 45,
+        "join_date": "2018-08-17",
+        "score": 64.85
+    }
+]
