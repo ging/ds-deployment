@@ -3,6 +3,8 @@ import requests
 import json
 import pprint
 
+# Constantes
+
 data_space_provider = "http://127.0.0.1:1234"
 data_space_consumer = "http://127.0.0.1:1235"
 api_test = "http://api-test:3000"
@@ -15,7 +17,7 @@ agreement_pid = ""
 
 ## Setup Catalog, Dataservice and agreements
 
-### Create a catalog
+### Create a catalog 
 
 payload = {
     "foaf:homepage": "My catalog in Dataspace provider",
@@ -31,7 +33,7 @@ catalog_id = response_as_json["@id"]
 
 pprint.pprint(response.json())
 
-### Create a data service
+### Create a data service 
 
 payload = {
     "dcat:endpointURL": api_test
@@ -46,7 +48,8 @@ dataservice_id = response_as_json["@id"]
 
 pprint.pprint(response.json())
 
-### Create an agreement
+
+### Create an agreement 
 
 payload = {
     "dataServiceId": dataservice_id
@@ -135,4 +138,47 @@ response = requests.request("POST", url, headers=headers, data=payload)
 
 pprint.pprint(response.json())
 
-# 
+# HTTP: restart transfer
+
+url = data_space_consumer + "/api/v1/restart-transfer"
+
+payload = json.dumps({
+  "consumerPid": consumerPid
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+pprint.pprint(response.json())
+
+# HTTP: complete transfer
+
+url = data_space_consumer + "/api/v1/complete-transfer"
+
+payload = json.dumps({
+  "consumerPid": consumerPid
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+pprint.pprint(response.json())
+
+# Protocol state cannot change
+
+url = data_space_consumer + "/api/v1/restart-transfer"
+
+payload = json.dumps({
+  "consumerPid": consumerPid
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+pprint.pprint(response.json())
