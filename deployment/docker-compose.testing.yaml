@@ -1,4 +1,3 @@
-version: "3"
 services:
 
   db-provider:
@@ -111,3 +110,21 @@ services:
     image: svenwal/jsonplaceholder
     ports:
       - "3000:3000"
+
+  rest-api-service:
+    build:
+      context: ./rest-api-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+
+  rest-api-backend:
+    build:
+      context: ./rest-api-backend
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./rest-api-backend/data:/data
