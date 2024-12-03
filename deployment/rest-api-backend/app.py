@@ -5,6 +5,7 @@ import script as scp
 import uvicorn
 import os
 import json
+import etl as etl
 
 
 # Inicializa la aplicación FastAPI
@@ -47,7 +48,7 @@ async def get_transfer_data():
         pprint.pprint("data_frame en la API: ")
         pprint.pprint(data_frame)
                 
-        file_path = os.path.join('/data/raw_data', f'{clave}.json')
+        file_path = os.path.join('/data/raw_data', f'{clave}.csv')
         pprint.pprint("file_path donde guardamos el df:")
         pprint.pprint(file_path)
         data_frame.to_csv(file_path, index=False)
@@ -57,7 +58,13 @@ async def get_transfer_data():
         # scp.restart_transfer(callback_info["consumerPid"])  # Reinicia la transferencia
         scp.complete_transfer(callback_info["consumerPid"])  # Completa la transferencia
         
-
+@app.get("/generate_dataset_viviendas")
+async def generate_dataset_viviendas():
+    etl.cruzar_viviendas_y_servicios()
+        
+@app.get("/generate_dataset_terrenos")
+async def generate_dataset_viviendas():
+    etl.cruzar_terrenos_y_servicios()
 
 
 if __name__ == "__main__":

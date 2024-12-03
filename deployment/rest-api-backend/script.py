@@ -4,6 +4,7 @@ import pprint
 import pandas as pd
 import os
 
+
 # Configuración de constantes
 DATA_SPACE_PROVIDER = "http://ds-provider:1234"
 DATA_SPACE_CONSUMER = "http://ds-consumer:1235"

@@ -1,4 +1,3 @@
-version: "3"
 services:
 
   db-provider:
@@ -128,4 +127,4 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - ./rest-api-backend:/data
+      - ./rest-api-backend/data:/data
