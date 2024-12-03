@@ -67,6 +67,15 @@ async def generate_dataset_viviendas():
     etl.cruzar_terrenos_y_servicios()
 
 
+@app.get("/get_dataset_viviendas")
+async def get_dataset_viviendas():
+    return etl.get_viviendas_y_servicios()
+
+@app.get("/get_dataset_terrenos")
+async def get_dataset_viviendas():
+    return etl.get_terrenos_y_servicios()
+
+
 if __name__ == "__main__":
     # Inicia el servidor Uvicorn si se ejecuta este script directamente
     uvicorn.run(app, host="0.0.0.0", port=9000)

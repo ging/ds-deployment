@@ -79,3 +79,14 @@ def cruzar_terrenos_y_servicios():
     with open(resultado_path, 'w') as file:
         file.write(geojson_data)
     print("Resultado de terrenos guardado en:", resultado_path)
+    
+def get_viviendas_y_servicios():
+    resultado_path = '/data/staging_data/viviendas_con_servicios.json'
+    with open(resultado_path, 'r') as file:
+        resultado = json.load(file)
+    return resultado
+def get_terrenos_y_servicios():
+    resultado_path = '/data/staging_data/terrenos_con_servicios.json'
+    with open(resultado_path, 'r') as file:
+        resultado = json.load(file)
+    return resultado
