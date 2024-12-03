@@ -2,34 +2,48 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const CustomForm = () => {
+const CustomForm = ({ onSubmit }) => {
+  
   return (
-    <Form>
-      {/* Intervalo 1 */}
-      <Form.Group className="mb-3" controlId="interval1">
-        <Form.Label>Intervalo 1</Form.Label>
-        <Form.Control type="number" placeholder="Ingrese un valor" />
+    <Form onSubmit={onSubmit}>
+      <Form.Group>
+        <Form.Label htmlFor="city">Ciudad</Form.Label>
+        <Form.Control
+          type="text"
+          id="city"
+          aria-describedby="cityInput"
+          placeholder='Introduce aqui tu ciudad'
+        />
       </Form.Group>
-
-      {/* Intervalo 2 */}
-      <Form.Group className="mb-3" controlId="interval2">
-        <Form.Label>Intervalo 2</Form.Label>
-        <Form.Control type="number" placeholder="Ingrese un valor" />
-      </Form.Group>
-
-      {/* Select */}
       <Form.Group className="mb-3" controlId="selectOption">
-        <Form.Label>Opciones</Form.Label>
+        <Form.Label>Distrito</Form.Label>
         <Form.Select>
-          <option value="opcion1">Opción 1</option>
-          <option value="opcion2">Opción 2</option>
-          <option value="opcion3">Opción 3</option>
+          <option value="opcion0" defaultValue="Elige un distrito"></option>
+          <option value="opcion1">Arganzuela</option>
+          <option value="opcion2">Centro</option>
+          <option value="opcion3">Retiro</option>
+          <option value="opcion3">Salamanca</option>
+          <option value="opcion3">Chamartin</option>
+          <option value="opcion3">Tetuan</option>
+          <option value="opcion3">Chamberi</option>
+          <option value="opcion3">Fuencarral-El Pardo</option>
+          <option value="opcion3">Mocloa-Aravaca</option>
+          <option value="opcion3">Latina</option>
+          <option value="opcion3">Carabanchel</option>
+          <option value="opcion3">Usera</option>
+          <option value="opcion3">Puente de Vallecas</option>
+          <option value="opcion3">Moratalaz</option>
+          <option value="opcion3">Ciudad Lineal</option>
+          <option value="opcion3">Hortaleza</option>
+          <option value="opcion3">Villaverde</option>
+          <option value="opcion3">Villa de Vallecas</option>
+          <option value="opcion3">Vicalvaro</option>
+          <option value="opcion3">San Blas</option>
+          <option value="opcion3">Barajas</option>
         </Form.Select>
       </Form.Group>
-
-      {/* Botón para enviar */}
       <Button variant="primary" type="submit">
-        Enviar
+        Buscar
       </Button>
     </Form>
   );
