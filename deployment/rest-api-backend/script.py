@@ -29,13 +29,16 @@ def create_catalog():
 def create_data_service_viviendas(catalog_id):
     """Crea un servicio de datos en el catálogo especificado y guarda la respuesta JSON en un archivo."""
     # Definir el payload y la URL de la API
-    payload = f"dcat:endpointURL: {REST_API_SERVICE}/viviendas"  # viviendas es el endpoint de la API de G1
+    payload = {
+        "dcat:endpointURL": f"{REST_API_SERVICE}/viviendas"  # Viviendas es el endpoint de la API de G1
+    }
     headers = {"Content-Type": "application/json"}
     url = f"{DATA_SPACE_PROVIDER}/api/v1/catalogs/{catalog_id}/data-services"
     
     # Realizar la solicitud POST
     response = requests.post(url, headers=headers, json=payload)
-    
+
+
     # Verificar que la respuesta es exitosa
     response.raise_for_status()
     
@@ -43,18 +46,23 @@ def create_data_service_viviendas(catalog_id):
     response_json = response.json()
     
     # Imprimir la respuesta para depuración
-    pprint.pprint(response_json)
+    # pprint.pprint(response_json)
+    return response_json['@id']
     
 # SERVICIOS
 def create_data_servicios(catalog_id):
     """Crea un servicio de datos en el catálogo especificado y guarda la respuesta JSON en un archivo."""
     # Definir el payload y la URL de la API
-    payload = f"dcat:endpointURL: {REST_API_SERVICE}/servicios"  # get_servicios es el endpoint de la API de G1
+    payload = {
+        "dcat:endpointURL": f"{REST_API_SERVICE}/servicios"  # Viviendas es el endpoint de la API de G1
+    }
     headers = {"Content-Type": "application/json"}
     url = f"{DATA_SPACE_PROVIDER}/api/v1/catalogs/{catalog_id}/data-services"
     
     # Realizar la solicitud POST
     response = requests.post(url, headers=headers, json=payload)
+    pprint.pprint("Prueba 3:")
+    pprint.pprint(response.json())
     
     # Verificar que la respuesta es exitosa
     response.raise_for_status()
@@ -64,12 +72,16 @@ def create_data_servicios(catalog_id):
     
     # Imprimir la respuesta para depuración
     pprint.pprint(response_json)
+    
+    return response_json['@id']
 
 # TERRENOS
 def create_data_terrenos(catalog_id):
     """Crea un servicio de datos en el catálogo especificado y guarda la respuesta JSON en un archivo."""
     # Definir el payload y la URL de la API
-    payload = f"dcat:endpointURL: {REST_API_SERVICE}/terrenos"  # get_terrenos es el endpoint de la API de G1
+    payload = {
+        "dcat:endpointURL": f"{REST_API_SERVICE}/terrenos"  # Viviendas es el endpoint de la API de G1
+    }
     headers = {"Content-Type": "application/json"}
     url = f"{DATA_SPACE_PROVIDER}/api/v1/catalogs/{catalog_id}/data-services"
     
@@ -84,9 +96,11 @@ def create_data_terrenos(catalog_id):
     
     # Imprimir la respuesta para depuración
     pprint.pprint(response_json)
+    return response_json['@id']
     
 def create_agreement(dataservice_id):
     """Crea un acuerdo utilizando un servicio de datos."""
+    pprint.pprint(dataservice_id)
     payload = {"dataServiceId": dataservice_id}
     headers = {"Content-Type": "application/json"}
     url = f"{DATA_SPACE_PROVIDER}/api/v1/agreements"
@@ -177,10 +191,46 @@ def create_combined_dataset(catalog_id):
 
 
 def fetch_data_from_data_plane(data_plane_address):
-    """Obtiene datos del plano de datos."""
-    url = data_plane_address.replace("ds-consumer", "127.0.0.1") + "/comments"
-    df = pd.read_json(url)
-    return df
+    # """Obtiene datos del plano de datos."""
+    # pprint.pprint("data_plane_address " + data_plane_address)
+    # url = data_plane_address
+    # pprint.pprint("url " + url)
+    # # df = pd.read_csv(url)
+    # df = requests.get(url) 
+    # pprint.pprint("df ")
+    # pprint.pprint(df.res)
+    # return df
+    """Obtiene datos del plano de datos y los convierte en un DataFrame."""
+    pprint.pprint("data_plane_address " + data_plane_address)
+    url = data_plane_address
+    pprint.pprint("url " + url)
+
+    # Hacer una solicitud GET a la URL
+    response = requests.get(url)
+    
+    # Verificar si la solicitud fue exitosa
+    if response.status_code == 200:
+        pprint.pprint("Respuesta recibida correctamente.")
+        
+        # Convertir la respuesta en JSON
+        json_data = response.json()
+        
+        # El JSON contiene el contenido dentro de la clave "content"
+        content = json_data.get("content", "[]")  # Si no hay contenido, usamos un array vacío por defecto
+        
+        # Convertir el contenido JSON (una cadena de texto) en una lista de diccionarios
+        content_list = pd.read_json(content)
+        
+        # Crear un DataFrame a partir de la lista de diccionarios
+        df = pd.DataFrame(content_list)
+        pprint.pprint("DataFrame creado:")
+        pprint.pprint(df)
+        
+        return df
+    else:
+        print("Error en la solicitud:", response.status_code)
+        return None
+
 
 
 def suspend_transfer(consumer_pid):
