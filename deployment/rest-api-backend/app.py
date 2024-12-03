@@ -6,6 +6,7 @@ import uvicorn
 import os
 import json
 import etl as etl
+import ml_model as ml_model
 
 
 # Inicializa la aplicación FastAPI
@@ -66,13 +67,16 @@ async def generate_dataset_viviendas():
 async def generate_dataset_viviendas():
     etl.cruzar_terrenos_y_servicios()
 
+@app.get("/generate_viviendas_con_nota")
+async def generate_viviendas_con_nota():
+    ml_model.generate_viviendas_con_nota()
 
-@app.get("/get_dataset_viviendas")
-async def get_dataset_viviendas():
-    return etl.get_viviendas_y_servicios()
+@app.get("/get_viviendas")
+async def get_viviendas():
+    return ml_model.get_viviendas_con_nota()
 
-@app.get("/get_dataset_terrenos")
-async def get_dataset_viviendas():
+@app.get("/get_terrenos")
+async def get_terrenos_y_servicios():
     return etl.get_terrenos_y_servicios()
 
 
