@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Container, Row, Col } from 'react-bootstrap';
+import MapView from './components/MapView';
+import Form from './components/Form'
+import Logo from './assets/logo.jpg';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="d-flex flex-column min-vh-100">
+      {/* Navbar */}
+      <Navbar bg="dark" variant="dark">
+        <Container fluid className="d-flex justify-content-between align-items-center">
+          {/* Título de la app */}
+          <Navbar.Brand href="#home">BuildMyMap</Navbar.Brand>
 
-export default App
+          {/* Imagen como link */}
+          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src= {Logo}
+              alt="Google"
+              className="img-fluid"
+              style={{ height: '30px' }}
+            />
+          </a>
+        </Container>
+      </Navbar>
+
+      {/* Body con dos secciones */}
+      <Container fluid className="flex-grow-1 py-3">
+        <Row>
+          {/* Sección 1 */}
+          <Col md={5} className="p-3">
+            <h4 style={{ height: '4vh', width: '105vh' }}>Sección 1</h4>
+            <Form />
+          </Col>
+          {/* Sección 2 con el componente MapView */}
+          <Col md={7} className="p-3">
+            <h4>Interactive Map</h4>
+            <MapView />
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Footer */}
+      <footer className="bg-dark text-white text-center py-3">
+        <p>© 2024 BuildMyMap</p>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
