@@ -1,4 +1,3 @@
-version: "3"
 services:
 
   db-provider:
@@ -15,6 +14,7 @@ services:
   ds-provider:
     container_name: ds-provider
     image: caparicioesd/rainbow:latest
+    platform: linux/arm64/v8
     restart: on-failure
     depends_on:
       - db-provider
@@ -27,6 +27,7 @@ services:
   ds-provider-setup:
     container_name: ds-provider-setup
     image: caparicioesd/rainbow:latest
+    platform:  linux/arm64/v8
     restart: on-failure
     depends_on:
       - db-provider
@@ -48,6 +49,7 @@ services:
   ds-consumer:
     container_name: ds-consumer
     image: caparicioesd/rainbow:latest
+    platform:  linux/arm64/v8
     restart: on-failure
     depends_on:
       - db-consumer
@@ -60,6 +62,7 @@ services:
   ds-consumer-setup:
     container_name: ds-consumer-setup
     image: caparicioesd/rainbow:latest
+    platform:  linux/arm64/v8
     restart: on-failure
     depends_on:
       - db-consumer
@@ -70,6 +73,7 @@ services:
   streaming-testing-service:
     container_name: streaming-testing-service
     image: caparicioesd/rainbow-test-srv:latest
+    platform:  linux/arm64/v8
     restart: always
     ports:
       - "1237:1237"
@@ -96,6 +100,7 @@ services:
 
   streaming-service:
     image: caparicioesd/rainbow-testing-streaming
+    platform:  linux/arm64/v8
     environment:
       CONTEXT_BROKER_URL: fiware-orion
       CONTEXT_BROKER_HOST: 1026
@@ -105,3 +110,21 @@ services:
     image: svenwal/jsonplaceholder
     ports:
       - "3000:3000"
+
+  rest-api-service:
+    build:
+      context: ./rest-api-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+
+  rest-api-backend:
+    build:
+      context: ./rest-api-backend
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./rest-api-backend/data:/data
