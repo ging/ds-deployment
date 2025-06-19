@@ -1,0 +1,1605 @@
+{
+	"info": {
+		"_postman_id": "e61608e4-ff6b-4820-8881-878bbabca3d0",
+		"name": "Application - Transfer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13165791"
+	},
+	"item": [
+		{
+			"name": "Provider",
+			"item": [
+				{
+					"name": "TP Processes",
+					"item": [
+						{
+							"name": "Get all transfer processes",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get transfer process by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/urn:uuid:081e7f5f-525b-4683-ab96-d2ac4a17fef1",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"urn:uuid:081e7f5f-525b-4683-ab96-d2ac4a17fef1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "TP Messages",
+					"item": [
+						{
+							"name": "Get all messages by transfer id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/urn:uuid:52b17fd1-8576-4e98-a426-440f04cdc0af/messages",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"urn:uuid:52b17fd1-8576-4e98-a426-440f04cdc0af",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all messages by transfer id Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/urn:uuid:0f110c83-91eb-46ad-ac39-8eca141a5034/messages/urn:uuid:bc6e4736-41ba-45c9-877b-3a353f28f04e",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"urn:uuid:0f110c83-91eb-46ad-ac39-8eca141a5034",
+										"messages",
+										"urn:uuid:bc6e4736-41ba-45c9-877b-3a353f28f04e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RPC",
+					"item": [
+						{
+							"name": "Transfer start",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"providerPid\": \"urn:uuid:ef1c0482-baf4-486b-913c-85a3c1b07b9f\",\n    \"consumerPid\": \"urn:uuid:d2d84c82-5080-4559-8bdf-49409ed5b982\",\n    \"consumerCallbackAddress\": \"http://127.0.0.1:1100/urn:uuid:7339a0fb-7f71-4e11-b3d8-fe89ebfba518\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/rpc/setup-start",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer suspension",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"consumerCallbackAddress\": \"http://127.0.0.1:1235/urn:uuid:d7525e8a-015b-48c9-9c9a-73517c0cbe72\",\n    \"providerPid\": \"urn:uuid:f64d3108-12a2-47e5-9d4b-bba0da6b116a\",\n    \"consumerPid\": \"urn:uuid:e995f211-f86a-49b6-8d30-b81e64d64709\",\n    \"code\": \"BLA\", \n    \"reason\": [\"bla\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/rpc/setup-suspension",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-suspension"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer completion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"consumerCallbackAddress\": \"http://127.0.0.1:1235/urn:uuid:d7525e8a-015b-48c9-9c9a-73517c0cbe72\",\n    \"providerPid\": \"urn:uuid:f64d3108-12a2-47e5-9d4b-bba0da6b116a\",\n    \"consumerPid\": \"urn:uuid:e995f211-f86a-49b6-8d30-b81e64d64709\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/rpc/setup-completion",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-completion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer termination",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"consumerCallbackAddress\": \"http://127.0.0.1:1235/urn:uuid:d7525e8a-015b-48c9-9c9a-73517c0cbe72\",\n    \"providerPid\": \"urn:uuid:f64d3108-12a2-47e5-9d4b-bba0da6b116a\",\n    \"consumerPid\": \"urn:uuid:e995f211-f86a-49b6-8d30-b81e64d64709\",\n    \"code\": \"BLA\",\n    \"reason\": [\n        \"bla\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/rpc/setup-termination",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-termination"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Events",
+					"item": [
+						{
+							"name": "Get all subscriptions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get subscriptions by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions/urn:uuid:e4ec7004-a5b9-452c-afdb-2759f85eed6c",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:e4ec7004-a5b9-452c-afdb-2759f85eed6c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create suscription",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/hola\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit suscription",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/hola\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions/urn:uuid:e4ec7004-a5b9-452c-afdb-2759f85eed6c",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:e4ec7004-a5b9-452c-afdb-2759f85eed6c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete suscription",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/holo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions/urn:uuid:e4ec7004-a5b9-452c-afdb-2759f85eed6c",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:e4ec7004-a5b9-452c-afdb-2759f85eed6c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all notifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/notifications",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all notifications by suscription id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions/urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820/notifications",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all pending notifications by subscription id Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions/urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820/notifications-pending",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820",
+										"notifications-pending"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ack all pending notifications by subscription id Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions/urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820/ack-notifications-pending",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820",
+										"ack-notifications-pending"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get notification by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/subscriptions/urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820/notifications/urn:uuid:e3d247c8-d6b0-45a6-845b-24b8a534e808",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:7d198ad2-d0a1-43d4-8faa-610ea1e04820",
+										"notifications",
+										"urn:uuid:e3d247c8-d6b0-45a6-845b-24b8a534e808"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DSProtocol",
+					"item": [
+						{
+							"name": "TransferRequest Push",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/dspace/2025/1/context.jsonld\"\n    ],\n    \"@type\": \"TransferRequestMessage\",\n    \"consumerPid\": \"urn:uuid:{{$guid}}\",\n    \"agreementId\": \"urn:uuid:{{$guid}}\",\n    \"format\": \"http+push\",\n    \"callbackAddress\": \"\",\n    \"dataAddress\": {\n        \"@type\": \"DataAddress\",\n        \"endpoint\": \"123\",\n        \"endpointType\": \"123\",\n        \"endpointProperties\": [\n            {\n                \"@type\": \"EndpointProperty\",\n                \"name\": \"authorization\",\n                \"value\": \"TOKEN-ABCDEFG\"\n            },\n            {\n                \"@type\": \"EndpointProperty\",\n                \"name\": \"authType\",\n                \"value\": \"bearer\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/transfers/request",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"transfers",
+										"request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferRequest Pull",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/dspace/2025/1/context.jsonld\"\n    ],\n    \"@type\": \"TransferRequestMessage\",\n    \"consumerPid\": \"urn:uuid:{{$guid}}\",\n    \"agreementId\": \"urn:uuid:{{$guid}}\",\n    \"format\": \"http+pull\",\n    \"callbackAddress\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/transfers/request",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"transfers",
+										"request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferStart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\"https://w3id.org/dspace/2025/1/context.jsonld\"],\n    \"@type\": \"TransferStartMessage\",\n    \"providerPid\": \"urn:uuid:081e7f5f-525b-4683-ab96-d2ac4a17fef1\",\n    \"consumerPid\": \"urn:uuid:c6772635-3261-4d85-8333-5f96a9551d7f\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/transfers/urn:uuid:081e7f5f-525b-4683-ab96-d2ac4a17fef1/start",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:081e7f5f-525b-4683-ab96-d2ac4a17fef1",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferSuspension",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"@context\": [\n        \"https://w3id.org/dspace/2025/1/context.jsonld\"\n    ],\n    \"@type\": \"TransferSuspensionMessage\",\n    \"providerPid\": \"urn:uuid:9d53dd36-8d22-4b1e-bd78-8133c8e09472\",\n    \"consumerPid\": \"urn:uuid:44a97685-db42-4659-8fa1-117c83e3ea92\",\n    \"code\": \"hola\",\n    \"reason\": [\"hola\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/transfers/urn:uuid:9d53dd36-8d22-4b1e-bd78-8133c8e09472/suspension",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:9d53dd36-8d22-4b1e-bd78-8133c8e09472",
+										"suspension"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferCompletion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\n        \"https://w3id.org/dspace/2025/1/context.jsonld\"\n    ],\n    \"@type\": \"TransferCompletionMessage\",\n    \"providerPid\": \"urn:uuid:5c25882e-0169-4a54-abb5-89af7cd86ff0\",\n    \"consumerPid\": \"urn:uuid:626d632b-08e3-4183-9d99-8151ddafa14a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/transfers/urn:uuid:5c25882e-0169-4a54-abb5-89af7cd86ff0/completion",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:5c25882e-0169-4a54-abb5-89af7cd86ff0",
+										"completion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferTermination",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://w3id.org/dspace/2024/1/context.json\",\n    \"@type\": \"TransferTerminationMessage\",\n    \"consumerPid\": \"urn:uuid:123\",\n    \"providerPid\": \"urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c\",\n    \"code\": \"hola\",\n    \"reason\": [\"hola\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferProvider}}/transfers/urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c/termination",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c",
+										"termination"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferState",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{TransferProvider}}/transfers/urn:uuid:42af52a6-98c1-4557-8fee-273cb2be3eee",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:42af52a6-98c1-4557-8fee-273cb2be3eee"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dataplane",
+					"item": [
+						{
+							"name": "Get dataplane info by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/dataplane/urn:uuid:7281d8da-7c42-452f-94e9-74f991ef3927",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"dataplane",
+										"urn:uuid:7281d8da-7c42-452f-94e9-74f991ef3927"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Consumer",
+			"item": [
+				{
+					"name": "TP Processes",
+					"item": [
+						{
+							"name": "Get all transfer processes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get transfer process by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/asd",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"asd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create transfer process Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update transfer process",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dataAddress\": \"hola\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/urn:uuid:7a4ebe33-df95-4b03-a7b2-0c8b6fb4eac4",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"urn:uuid:7a4ebe33-df95-4b03-a7b2-0c8b6fb4eac4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get transfer process by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/urn:uuid:asd",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"urn:uuid:asd"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "TP Messages",
+					"item": [
+						{
+							"name": "Get all messages by transfer id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/urn:uuid:52b17fd1-8576-4e98-a426-440f04cdc0af/messages",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"urn:uuid:52b17fd1-8576-4e98-a426-440f04cdc0af",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all messages by transfer id Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferProvider}}/api/v1/transfers/urn:uuid:0f110c83-91eb-46ad-ac39-8eca141a5034/messages/urn:uuid:bc6e4736-41ba-45c9-877b-3a353f28f04e",
+									"host": [
+										"{{TransferProvider}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"urn:uuid:0f110c83-91eb-46ad-ac39-8eca141a5034",
+										"messages",
+										"urn:uuid:bc6e4736-41ba-45c9-877b-3a353f28f04e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RPC",
+					"item": [
+						{
+							"name": "Transfer request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"providerAddress\": \"{{TransferProvider}}\",\n    \"agreementId\": \"urn:uuid:ab626eb7-c6e3-48c2-b870-930b55e72161\",\n    \"format\": \"http+pull\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/rpc/setup-request",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer start",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"providerAddress\": \"http://localhost:1234\",\n    \"providerPid\": \"urn:uuid:f64d3108-12a2-47e5-9d4b-bba0da6b116a\",\n    \"consumerPid\": \"urn:uuid:e995f211-f86a-49b6-8d30-b81e64d64709\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/rpc/setup-start",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer suspension",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"providerAddress\": \"http://localhost:1234\",\n    \"providerPid\": \"urn:uuid:f64d3108-12a2-47e5-9d4b-bba0da6b116a\",\n    \"consumerPid\": \"urn:uuid:e995f211-f86a-49b6-8d30-b81e64d64709\",\n    \"code\": \"BLA\", \n    \"reason\": [\"bla\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/rpc/setup-suspension",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-suspension"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer completion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"providerAddress\": \"http://localhost:1234\",\n    \"providerPid\": \"urn:uuid:d6eb184b-3023-4ade-9bdd-04de40875c35\",\n    \"consumerPid\": \"urn:uuid:dabc7bfe-b906-446c-96d2-3636c2029d6b\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/rpc/setup-completion",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-completion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer termination",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"providerAddress\": \"http://localhost:1234\",\n    \"providerPid\": \"urn:uuid:d6eb184b-3023-4ade-9bdd-04de40875c35\",\n    \"consumerPid\": \"urn:uuid:dabc7bfe-b906-446c-96d2-3636c2029d6b\",\n    \"code\": \"BLA\", \n    \"reason\": [\"bla\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:{{consumer_port}}/api/v1/transfers/rpc/setup-termination",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "{{consumer_port}}",
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"rpc",
+										"setup-termination"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Events",
+					"item": [
+						{
+							"name": "Get all subscriptions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get subscriptions by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions/urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create suscription",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/hola\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit suscription",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/holo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions/urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete suscription",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/holo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions/urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all notifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/notifications",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all notifications by suscription id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions/urn:uuid:123/notifications",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:123",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all pending notifications by subscription id Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions/urn:uuid:123/notifications-pending",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:123",
+										"notifications-pending"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get notification by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/transfers/subscriptions/urn:uuid:123/notifications/urn:uuid:123",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transfers",
+										"subscriptions",
+										"urn:uuid:123",
+										"notifications",
+										"urn:uuid:123"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DSProtocol",
+					"item": [
+						{
+							"name": "TransferStart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": [\"https://w3id.org/dspace/2025/1/context.jsonld\"],\n    \"@type\": \"TransferStartMessage\",\n    \"providerPid\": \"urn:uuid:de50ba3d-5f1d-403f-965b-f691628fe85d\",\n    \"consumerPid\": \"urn:uuid:1a96c0ef-14e0-4aaf-b826-b5468e7c9a77\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/urn:uuid:123/transfers/urn:uuid:1a96c0ef-14e0-4aaf-b826-b5468e7c9a77/start",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"urn:uuid:123",
+										"transfers",
+										"urn:uuid:1a96c0ef-14e0-4aaf-b826-b5468e7c9a77",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferSuspension",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"@context\": [\n        \"https://w3id.org/dspace/2025/1/context.jsonld\"\n    ],\n    \"@type\": \"TransferSuspensionMessage\",\n    \"providerPid\": \"urn:uuid:9d53dd36-8d22-4b1e-bd78-8133c8e09472\",\n    \"consumerPid\": \"urn:uuid:44a97685-db42-4659-8fa1-117c83e3ea92\",\n    \"code\": \"hola\",\n    \"reason\": [\"hola\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/transfers/urn:uuid:9d53dd36-8d22-4b1e-bd78-8133c8e09472/suspension",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:9d53dd36-8d22-4b1e-bd78-8133c8e09472",
+										"suspension"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferCompletion",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://w3id.org/dspace/2024/1/context.json\",\n    \"@type\": \"TransferCompletionMessage\",\n    \"consumerPid\": \"urn:uuid:123\",\n    \"providerPid\": \"urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/transfers/urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c/completion",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c",
+										"completion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferTermination",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"@context\": \"https://w3id.org/dspace/2024/1/context.json\",\n    \"@type\": \"TransferTerminationMessage\",\n    \"consumerPid\": \"urn:uuid:123\",\n    \"providerPid\": \"urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c\",\n    \"code\": \"hola\",\n    \"reason\": [\"hola\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{TransferConsumer}}/transfers/urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c/termination",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:0c8a1621-716e-4a69-b0a7-8e924867327c",
+										"termination"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TransferState",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{TransferConsumer}}/transfers/urn:uuid:42af52a6-98c1-4557-8fee-273cb2be3eee",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"transfers",
+										"urn:uuid:42af52a6-98c1-4557-8fee-273cb2be3eee"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dataplane",
+					"item": [
+						{
+							"name": "Get dataplane info by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TransferConsumer}}/api/v1/dataplane/urn:uuid:7228d3b0-5e8f-4baa-a5d3-f676daad52e7",
+									"host": [
+										"{{TransferConsumer}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"dataplane",
+										"urn:uuid:7228d3b0-5e8f-4baa-a5d3-f676daad52e7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

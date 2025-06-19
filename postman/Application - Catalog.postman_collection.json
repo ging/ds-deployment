@@ -1,0 +1,1317 @@
+{
+	"info": {
+		"_postman_id": "df166af8-fe81-47ee-b4b7-89ee4163276a",
+		"name": "Application - Catalog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13165791"
+	},
+	"item": [
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Catalog Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Catalog Get by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:02a8f44d-b845-4987-93a7-78e649083d65",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:02a8f44d-b845-4987-93a7-78e649083d65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Catalog Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"dct:title\": \"titleeee\",\n   \"dct:conformsTo\": \"titleeee\",\n   \"foaf:homepage\": \"homepage\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:7367541b-d9e1-499a-8262-93e568cddc2f",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:7367541b-d9e1-499a-8262-93e568cddc2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Catalog Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:7367541b-d9e1-499a-8262-93e568cddc2f",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:7367541b-d9e1-499a-8262-93e568cddc2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Catalog Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foaf:homepage\": \"superfoaf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Catalog Create Main",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foaf:homepage\": \"superfoaf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/main",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"main"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Catalog Get Policies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:0f599834-cc58-44e1-b7ec-6de71ffa2d5b/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:0f599834-cc58-44e1-b7ec-6de71ffa2d5b",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Catalog Create Policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"odrl:permission\": [\n        {\n            \"odrl:action\": \"use\",\n            \"odrl:constraint\": [\n                {\n                    \"odrl:rightOperand\": \"user\",\n                    \"odrl:leftOperand\": \"did:web:hola.es\",\n                    \"odrl:operator\": \"odrl:eq\"\n                }\n            ]\n        }\n    ],\n    \"odrl:obligation\": [],\n    \"odrl:prohibition\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:0f599834-cc58-44e1-b7ec-6de71ffa2d5b/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:0f599834-cc58-44e1-b7ec-6de71ffa2d5b",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dataset",
+			"item": [
+				{
+					"name": "Datasets By Catalog Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:e40bc8f7-733d-412d-8fbd-f9d4ea07ed92/datasets",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:e40bc8f7-733d-412d-8fbd-f9d4ea07ed92",
+								"datasets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataset Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dct:title\": \"blablabla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:4e7199f7-5690-4ff0-b2bf-c6274b3f9d7d/datasets",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:4e7199f7-5690-4ff0-b2bf-c6274b3f9d7d",
+								"datasets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataset Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dct:title\": \"blablabasdasasdasdasdasdasdla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f/datasets/urn:uuid:bcaedaf5-b6fb-4ace-b93a-162f3adaa73c",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f",
+								"datasets",
+								"urn:uuid:bcaedaf5-b6fb-4ace-b93a-162f3adaa73c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataset Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f/datasets/urn:uuid:056c345c-0625-4427-8aa7-cf6c311aa434",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f",
+								"datasets",
+								"urn:uuid:056c345c-0625-4427-8aa7-cf6c311aa434"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataset Get Policies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/datasets/urn:uuid:8ddcfc93-98c5-4fa7-bfae-f34ff2dce3cf/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"datasets",
+								"urn:uuid:8ddcfc93-98c5-4fa7-bfae-f34ff2dce3cf",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataset Create Policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"permission\": [\n        {\n            \"action\": \"use\",\n            \"constraint\": [\n                {\n                    \"rightOperand\": \"user\",\n                    \"leftOperand\": \"did:web:hola.es\",\n                    \"operator\": \"eq\"\n                }\n            ]\n        }\n    ],\n    \"obligation\": [],\n    \"prohibition\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/datasets/urn:uuid:8ddcfc93-98c5-4fa7-bfae-f34ff2dce3cf/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"datasets",
+								"urn:uuid:8ddcfc93-98c5-4fa7-bfae-f34ff2dce3cf",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DataService",
+			"item": [
+				{
+					"name": "DataServices By Catalog Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:e40bc8f7-733d-412d-8fbd-f9d4ea07ed92/datasets",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:e40bc8f7-733d-412d-8fbd-f9d4ea07ed92",
+								"datasets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataservice Create Fiware push",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dcat:endpointURL\": \"http://fiware-orion:1026/v2/subscriptions\",\n    \"dcat:endpointDescription\": \"{\\n  \\\"description\\\": \\\"$data_description\\\",\\n  \\\"subject\\\": {\\n    \\\"entities\\\": [\\n      {\\n        \\\"idPattern\\\": \\\".*\\\",\\n        \\\"type\\\": \\\"AirQualityUnit\\\"\\n      }\\n    ],\\n    \\\"condition\\\": {\\n      \\\"attrs\\\": [\\\"CO\\\"]\\n    }\\n  },\\n  \\\"notification\\\": {\\n    \\\"http\\\": {\\n      \\\"url\\\": \\\"$data_url\\\"\\n    },\\n    \\\"attrs\\\": [\\\"CO\\\"]\\n  },\\n  \\\"expires\\\": \\\"2040-01-01T14:00:00.00Z\\\",\\n  \\\"throttling\\\": 5\\n}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:4e7199f7-5690-4ff0-b2bf-c6274b3f9d7d/data-services",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:4e7199f7-5690-4ff0-b2bf-c6274b3f9d7d",
+								"data-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataservice Create Fiware pull",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dcat:endpointURL\": \"http://fiware-orion:1026/v2/subscriptions\",\n    \"dcat:endpointDescription\": \"{\\n  \\\"description\\\": \\\"$data_description\\\",\\n  \\\"subject\\\": {\\n    \\\"entities\\\": [\\n      {\\n        \\\"idPattern\\\": \\\".*\\\",\\n        \\\"type\\\": \\\"AirQualityUnit\\\"\\n      }\\n    ],\\n    \\\"condition\\\": {\\n      \\\"attrs\\\": [\\\"CO\\\"]\\n    }\\n  },\\n  \\\"notification\\\": {\\n    \\\"http\\\": {\\n      \\\"url\\\": \\\"$data_url\\\"\\n    },\\n    \\\"attrs\\\": [\\\"CO\\\"]\\n  },\\n  \\\"expires\\\": \\\"2040-01-01T14:00:00.00Z\\\",\\n  \\\"throttling\\\": 5\\n}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f/data-services",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f",
+								"data-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataservice Create HTTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dcat:endpointURL\": \"https://jsonplaceholder.typicode.com/posts\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f/data-services",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f",
+								"data-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DataService Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dcat:endpointDescription\": \"asdasdasd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f/data-services/urn:uuid:885b933d-8746-401b-950e-33ca1c7549f5",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f",
+								"data-services",
+								"urn:uuid:885b933d-8746-401b-950e-33ca1c7549f5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DataService Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f/data-services/urn:uuid:885b933d-8746-401b-950e-33ca1c7549f5",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f",
+								"data-services",
+								"urn:uuid:885b933d-8746-401b-950e-33ca1c7549f5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DataService Get Policies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/data-services/urn:uuid:d4c91276-a050-4d4b-810f-928e435aaca3/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"data-services",
+								"urn:uuid:d4c91276-a050-4d4b-810f-928e435aaca3",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DataService Create Policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lol\": 123\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/data-services/urn:uuid:d4c91276-a050-4d4b-810f-928e435aaca3/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"data-services",
+								"urn:uuid:d4c91276-a050-4d4b-810f-928e435aaca3",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Distributions",
+			"item": [
+				{
+					"name": "Distributions By Dataset and Catalog ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:e40bc8f7-733d-412d-8fbd-f9d4ea07ed92/datasets",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:e40bc8f7-733d-412d-8fbd-f9d4ea07ed92",
+								"datasets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Distribution Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dcat:accessService\": \"urn:uuid:e403f28d-9ace-4462-bc2b-62779c9f92d6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:4e7199f7-5690-4ff0-b2bf-c6274b3f9d7d/datasets/urn:uuid:c65b01d8-1d5b-4319-8d66-26d9afcc7ac7/distributions",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:4e7199f7-5690-4ff0-b2bf-c6274b3f9d7d",
+								"datasets",
+								"urn:uuid:c65b01d8-1d5b-4319-8d66-26d9afcc7ac7",
+								"distributions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Distribution Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dct:title\": \"blablabasdasdasdla\",\n        \"dcat:accessService\": \"urn:uuid:6df166da-bff4-48f5-958b-de48047a33da\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f/datasets/urn:uuid:499e741b-2a5b-4924-bfc7-863cece6a76a/distributions/urn:uuid:32159bb2-81f5-4c37-a9c4-473bb6fe0163",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796f5f-eaad-4339-8df5-bdc27c73580f",
+								"datasets",
+								"urn:uuid:499e741b-2a5b-4924-bfc7-863cece6a76a",
+								"distributions",
+								"urn:uuid:32159bb2-81f5-4c37-a9c4-473bb6fe0163"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Distribution Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalogs/urn:uuid:c6796ff-eaad-4339-8df5-bdc27c73580f/datasets/urn:uuid:49e741b-2a5b-4924-bfc7-863cece6a76a/distributions/urn:uuid:32159bb2-81f5-4c37-a9c4-473bb6fe0163",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalogs",
+								"urn:uuid:c6796ff-eaad-4339-8df5-bdc27c73580f",
+								"datasets",
+								"urn:uuid:49e741b-2a5b-4924-bfc7-863cece6a76a",
+								"distributions",
+								"urn:uuid:32159bb2-81f5-4c37-a9c4-473bb6fe0163"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Distributions Get Policies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/distributions/urn:uuid:98e79a3e-b239-4ed2-bb63-3f112fed7dcb/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"distributions",
+								"urn:uuid:98e79a3e-b239-4ed2-bb63-3f112fed7dcb",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Distributions Create Policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hola\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/distributions/urn:uuid:98e79a3e-b239-4ed2-bb63-3f112fed7dcb/policies",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"distributions",
+								"urn:uuid:98e79a3e-b239-4ed2-bb63-3f112fed7dcb",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Distribution By Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RPC",
+			"item": [
+				{
+					"name": "RPC Resolve Dataservice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dataServiceId\": \"urn:uuid:6df166da-bff4-48f5-958b-de48047a33da\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/rpc/resolve-data-service",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"rpc",
+								"resolve-data-service"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DSProtocol",
+			"item": [
+				{
+					"name": "Catalog Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"@context\": [\n        \"https://w3id.org/dspace/2025/1/context.jsonld\"\n    ],\n    \"@type\": \"CatalogRequestMessage\",\n    \"filter\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/catalog/request",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"catalog",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dataset Request By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/catalog/datasets/urn:uuid:0acee4a5-4bbb-420c-92c-e49ceed8b71c",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"catalog",
+								"datasets",
+								"urn:uuid:0acee4a5-4bbb-420c-92c-e49ceed8b71c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Get all subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get subscriptions by callbackurl",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get subscriptions by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create suscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/hola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit suscription",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/holo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete suscription",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"callbackAddress\": \"http://localhost:1111/holo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:78bc8aac-0db9-4718-b73a-6774952ae782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/notifications",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all notifications by suscription id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:123/notifications",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:123",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all pending notifications by subscription id Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:123/notifications-pending",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:123",
+								"notifications-pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ack all pending notifications by subscription id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:828181c2-3185-4aca-8b41-e473ce477222/ack-notifications-pending",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:828181c2-3185-4aca-8b41-e473ce477222",
+								"ack-notifications-pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get notification by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CatalogProvider}}/api/v1/catalog/subscriptions/urn:uuid:123/notifications/urn:uuid:123",
+							"host": [
+								"{{CatalogProvider}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"subscriptions",
+								"urn:uuid:123",
+								"notifications",
+								"urn:uuid:123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OpenAPI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CatalogProvider}}/api/v1/catalog/openapi.json",
+					"host": [
+						"{{CatalogProvider}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"catalog",
+						"openapi.json"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
